@@ -9,15 +9,13 @@
     create:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v4
+        - name: Clone oci-arm-host-capacity
+          run: git clone https://github.com/hitrov/oci-arm-host-capacity .
 
         - name: Setup PHP
           uses: shivammathur/setup-php@v2
           with:
             php-version: '8.1'
-
-        - name: Clone oci-arm-host-capacity
-          run: git clone https://github.com/hitrov/oci-arm-host-capacity .
 
         - name: Install dependencies
           run: composer install
